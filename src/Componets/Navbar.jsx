@@ -36,7 +36,7 @@ function Navbar() {
                         <img src={logo} alt="" className='w-12 h-12 rounded-full object-cover' />
                         <h1 className='text-xl font-semibold cursor-pointer'>
                             Amit kumar
-                            <p className='text-sm'>Web Developer</p>
+                            <p className='text-sm'>Software Developer</p>
                         </h1>
                     </div>
                     <div className=''>
