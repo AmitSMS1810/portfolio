@@ -7,6 +7,8 @@ import Experience from './Componets/Experience'
 import Footer from './Componets/Footer'
 import Contact from './Componets/Contact'
 import { Toaster } from 'react-hot-toast'
+import Skill from './Componets/Skill'
+import Projects from './Componets/Projects'
 
 function App() {
   return (
@@ -15,10 +17,10 @@ function App() {
       <Navbar/>
       <Home/>
       <Aboutus/>
-      <Portfolio/>
+      <Skill/>  
+      <Projects/>
       <Experience/>
       <Contact/>
-      <Footer/>
       </div>
       <Toaster/>
     </>

@@ -1,82 +1,132 @@
-import axios from 'axios'
-import React from 'react'
-import { useForm } from "react-hook-form"
-import toast from 'react-hot-toast'
+import { motion } from "framer-motion";
 
-function Contact() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm()
-    const onSubmit = async (data) => {
-        const userInfo = {
-            name: data.name,
-            email: data.email,
-            message: data.message,
-        }
-        try {
-            await axios.post('https://getform.io/f/avrrpwna', userInfo);
-            toast.success('your message has been send');
-        }
-        catch (err) {
-            console.log(err);
-            toast.error('Something went rong');
-        }
+import {
+  FaPhone,
+  FaEnvelope,
+  FaLinkedin,
+  FaGithub
+} from "react-icons/fa";
+
+export default function Contact() {
+
+  const contacts = [
+
+    {
+      icon: <FaPhone className="text-cyan-400 text-2xl" />,
+      title: "Phone",
+      value: "+91 6306524241",
+      link: "tel:+916306524241"
+    },
+
+    {
+      icon: <FaEnvelope className="text-cyan-400 text-2xl" />,
+      title: "Email",
+      value: "akvns1999@gmail.com",
+      link: "mailto:akvns1999@gmail.com"
+    },
+
+    {
+      icon: <FaLinkedin className="text-cyan-400 text-2xl" />,
+      title: "LinkedIn",
+      value: "https://www.linkedin.com/in/amit-kumar-201275296/",
+      link: "https://www.linkedin.com/in/amit-kumar-201275296/"
+    },
+
+    {
+      icon: <FaGithub className="text-cyan-400 text-2xl" />,
+      title: "GitHub",
+      value: "https://github.com/AmitSMS1810",
+      link: "https://github.com/AmitSMS1810"
     }
-    return (
-        <>
-            <div name="ContactUs" className='max-w-screen-2xl container mx-auto px-4 md:px-20 my-16'>
-                <h1 className='text-3xl font-bold mb-4'>Contact me </h1>
-                <span>Please fill out the form below contact me</span>
-                <div className='flex flex-col items-center justify-center'>
-                    <form
-                        onSubmit={handleSubmit(onSubmit)}                        
-                        className='bg-slate-200 w-96 px-8 py-8 rounded-md mt-4'
-                    >
-                        <h1 className='text-xl font-semibold mb-4'>Send your Message</h1>
-                        <div className='flex flex-col mb-4'>
-                            <label className='block text-gray-700'>
-                                Full Name
-                            </label>
-                            <input type="text"
-                                {...register("name", { required: true })}
-                                id='name'
-                                name='name'
-                                className='shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                                placeholder='Enter your Full Name' />
-                            {errors.name && <span>This field is required</span>}
-                        </div>
-                        <div className='flex flex-col mb-4'>
-                            <label className='block text-gray-700'>
-                                Email Address
-                            </label>
-                            <input type="email"
-                                {...register("email", { required: true })}
-                                id='email'
-                                name='email'
-                                className='shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                                placeholder='Enter your Email' />
-                            {errors.email && <span>This field is required</span>}
-                        </div>
-                        <div className='flex flex-col mb-4'>
-                            <label className='block text-gray-700'>
-                                Message
-                            </label>
-                            <textarea type="text"
-                                {...register("message", { required: true })}
-                                id='message'
-                                name='message'
-                                className='shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'
-                                placeholder='Enter your Message' />
-                            {errors.message && <span>This field is required</span>}
-                        </div>
-                        <button type='submit' className='bg-black text-white py-2 px-3 rounded-md hover:bg-slate-700 duration-300'>Send</button>
-                    </form>
-                </div>
-            </div>
-        </>
-    )
-}
 
-export default Contact
+  ];
+
+
+  return (
+    <section name="ContactUs" className="hero-bg py-28 bg-[#0f172a] text-white">
+
+      <div className="max-w-[1100px] mx-auto px-6">
+
+        {/* TITLE */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-20"
+        >
+
+          <h2 className="text-4xl font-semibold">
+            Get In <span className="text-cyan-400">Touch</span>
+          </h2>
+
+          <p className="text-gray-400 mt-4">
+            Interested in working together or hiring me?
+            Feel free to reach out through any platform below.
+          </p>
+
+        </motion.div>
+
+
+        {/* CONTACT GRID */}
+
+        <div className="grid md:grid-cols-2 gap-8">
+
+          {contacts.map((contact, index) => (
+
+            <motion.a
+              key={index}
+              href={contact.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.15 }}
+              whileHover={{ scale: 1.03 }}
+              className="flex items-center gap-6 bg-[#111c3a] border border-gray-700 p-6 rounded-xl hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(0,255,255,0.15)] transition"
+            >
+
+              {contact.icon}
+
+              <div>
+
+                <h4 className="text-sm text-gray-400">
+                  {contact.title}
+                </h4>
+
+                <p className="text-white font-medium">
+                  {contact.value}
+                </p>
+
+              </div>
+
+            </motion.a>
+
+          ))}
+
+        </div>
+
+
+        {/* CTA BUTTON */}
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          className="text-center mt-16"
+        >
+
+          <a
+            href="mailto:yourmail@gmail.com"
+            className="inline-block px-8 py-4 bg-cyan-500 text-black rounded-lg font-medium hover:bg-cyan-400 transition"
+          >
+            Let's Work Together →
+          </a>
+
+        </motion.div>
+
+      </div>
+
+    </section>
+  );
+}
