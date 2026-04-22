@@ -89,13 +89,14 @@ function Home() {
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                                 <a
-                                    href="#projects"
+                                    href="https://drive.google.com/file/d/171oGhYzRBuYSftgJ7SADKQv3Y9engJeY/view?usp=sharing"
+                                    target="_blank"
                                     className="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg hover:opacity-90 transition duration-300"
                                 >
                                     Download Resume
                                 </a>
                                 <a
-                                    href="#contact"
+                                    href="#ContactUs"
                                     className="px-6 py-2 border border-gray-600 rounded-lg hover:bg-gray-800 transition duration-300"
                                 >
                                     Contact Me
