@@ -4,6 +4,21 @@ export default function Projects() {
 
   const projects = [
     {
+      name: "Curo24 Healthcare Website",
+      company: "Curo24",
+      description:
+        "A healthcare platform for ordering medicines and booking lab tests using prescriptions.",
+      impact: "Simplified medicine ordering & lab booking experience",
+      process: [
+        "Prescription upload",
+        "Order processing",
+        "Lab booking system",
+      ],
+      tech: ["React Native", "Tailwind CSS"],
+      link: "https://curo24.com",
+      type: "client"
+    },
+    {
       name: "Multi Panel CRM System",
       company: "RDVision",
       description:
@@ -20,34 +35,46 @@ export default function Projects() {
     },
 
     {
-      name: "Pharmacy Management System (PMS)",
-      company: "CURO24",
+      name: "Stynaco – Business Website & Web Platform",
+      company: "Mindstocs",
       description:
-        "A system for pharmacies to manage inventory, billing, and prescriptions efficiently.",
-      impact: "Reduced manual billing errors & improved inventory control",
+        "A business-focused digital platform designed to showcase company services, products, and business information through a modern and responsive web experience.",
+      impact:
+        "Improved online brand presence, simplified information accessibility, and delivered a responsive user experience across devices.",
       process: [
-        "Medicine inventory management",
-        "Prescription handling",
-        "Billing & order processing",
+        "Responsive website development",
+        "Modern user interface implementation",
+        "Company information and service presentation",
+        "Cross-device compatibility",
+        "Website performance optimization"
       ],
-      tech: ["React.js", "Tailwind CSS"],
-      link: "https://pms.curo24.com",
+      tech: [
+        "React.js",
+        "Tailwind CSS",
+        "JavaScript",
+        "HTML5",
+        "CSS3"
+      ],
+      link: "https://stynaco.com/",
       type: "client"
     },
 
     {
-      name: "Lab Management System",
-      company: "CURO24",
+      name: "Appointment Booking & Prescription Management System",
+      company: "Stynaco",
       description:
-        "A platform for managing lab test workflows including sample collection and reporting.",
-      impact: "Improved lab workflow efficiency and report generation",
+        "A healthcare appointment booking and prescription management platform that allows patients to book online and offline appointments, consult with doctors, and receive digital prescriptions.",
+      impact:
+        "Simplified appointment scheduling, improved patient-doctor coordination, and streamlined prescription management.",
       process: [
-        "Patient registration",
-        "Sample tracking",
-        "Result generation",
+        "Patient registration and authentication",
+        "Online and offline doctor appointment booking",
+        "Appointment scheduling and management",
+        "Online and in-person consultations",
+        "Digital prescription generation and management",
       ],
       tech: ["React.js", "Tailwind CSS"],
-      link: "https://lms.curo24.com",
+      link: "https://mindstocs-hospital-saas-web.vercel.app/login",
       type: "client"
     },
 
@@ -63,22 +90,6 @@ export default function Projects() {
         "Task management",
       ],
       tech: ["React Native", "Tailwind CSS"],
-      type: "client"
-    },
-
-    {
-      name: "Curo24 Healthcare App",
-      company: "Curo24",
-      description:
-        "A healthcare platform for ordering medicines and booking lab tests using prescriptions.",
-      impact: "Simplified medicine ordering & lab booking experience",
-      process: [
-        "Prescription upload",
-        "Order processing",
-        "Lab booking system",
-      ],
-      tech: ["React Native", "Tailwind CSS"],
-      link: "https://curo24.com",
       type: "client"
     },
 
@@ -142,13 +153,7 @@ export default function Projects() {
               <div className="flex gap-2 mb-2">
                 {index === 0 && (
                   <span className="text-xs text-cyan-400 border border-cyan-400 px-2 py-1 rounded">
-                    🚀 Featured 
-                  </span>
-                )}
-
-                {project.type === "client" && (
-                  <span className="text-xs text-green-400 border border-green-400 px-2 py-1 rounded">
-                    💼 Client Project
+                    🚀 Featured
                   </span>
                 )}
               </div>

@@ -4,6 +4,7 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import { TbBrandReactNative } from "react-icons/tb";
 import { ReactTyped } from "react-typed";
 import { motion } from "framer-motion";
+import { Link as ScrollLink } from "react-scroll";
 import home from "../assets/home.png";
 
 function Home() {
@@ -66,7 +67,7 @@ function Home() {
                             </h2>
 
                             <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-xl mx-auto md:mx-0">
-                                1.6+ years of experience building production-level applications for real clients across CRM, healthcare, and e-commerce.
+                                2+ years of experience building production-level applications for real clients across CRM, healthcare, and e-commerce.
                             </p>
 
                             <div className="flex flex-col gap-4 items-center md:items-start">
@@ -95,12 +96,15 @@ function Home() {
                                 >
                                     Download Resume
                                 </a>
-                                <a
-                                    href="#ContactUs"
-                                    className="px-6 py-2 border border-gray-600 rounded-lg hover:bg-gray-800 transition duration-300"
+                                <ScrollLink
+                                    to="ContactUs"
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-70}
+                                    className="px-6 py-2 border border-gray-600 rounded-lg hover:bg-gray-800 transition duration-300 cursor-pointer text-center"
                                 >
                                     Contact Me
-                                </a>
+                                </ScrollLink>
                             </div>
                         </div>
 

@@ -1,153 +1,172 @@
+
 import { motion } from "framer-motion";
 
 export default function Experience() {
-
   const experiences = [
-
+    {
+      company: "MindStocs",
+      role: "Full Stack Developer",
+      duration: "07 Aug 2026 – Present",
+      description:
+        "Working on healthcare SaaS platforms and business management applications, developing frontend interfaces, backend APIs, and database integrations for web and mobile applications.",
+      impact:
+        "Building integrated healthcare and business management solutions",
+      highlights: [
+        "Developing a multi-tenant hospital and healthcare appointment booking SaaS platform",
+        "Working on online and offline doctor consultations and prescription management workflows",
+        "Developing employee management and CRM modules",
+        "Building and integrating REST APIs with Node.js, Express.js, and Supabase PostgreSQL",
+        "Developed the website for Stynaco, a newly registered company under the MindStocs umbrella",
+      ],
+      tech: [
+        "React.js",
+        "React Native",
+        "Node.js",
+        "Express.js",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Supabase",
+        "Redis",
+      ],
+    },
     {
       company: "Curo24",
-      role: "Front End Developer",
-      duration: "2025 - Present",
+      role: "Frontend Developer",
+      duration: "Sep 2025 – 30 Jun 2026",
       description:
-        "Working on production-level healthcare platforms and mobile applications focused on medicine ordering, lab services, and operational efficiency.",
-
-      impact: "Improved healthcare service accessibility and operational workflows",
-
+        "Worked on healthcare web and mobile applications focused on medicine ordering, laboratory services, prescription handling, and operational efficiency.",
+      impact:
+        "Improved healthcare service accessibility and streamlined operational workflows",
       highlights: [
-        "Developed Curo24 healthcare application used for medicine ordering and lab bookings",
-        "Built prescription upload and real-time order processing system",
-        "Integrated nearby pharmacy system for faster fulfillment",
-        "Implemented lab test booking and sample collection workflow",
-        "Developed field executive tracking system for operational monitoring"
+        "Developed healthcare application features for medicine ordering and lab bookings",
+        "Implemented prescription upload and order processing workflows",
+        "Integrated nearby pharmacy features for medicine fulfillment",
+        "Worked on laboratory test booking and sample collection workflows",
+        "Developed field executive features for operational tracking and monitoring",
       ],
-
       tech: [
-        "React Native",
         "React.js",
-        "Tailwind CSS"
-      ]
+        "React Native",
+        "Tailwind CSS",
+        "REST APIs",
+      ],
     },
-
     {
       company: "RDVision",
-      role: "Front End Developer",
-      duration: "2024 - 2025",
+      role: "Frontend Developer",
+      duration: "2024 – 2025",
       description:
-        "Built multiple business-focused applications including CRM systems, hiring platforms, and e-commerce solutions for real clients.",
-
-      impact: "Enhanced business operations, sales tracking, and hiring workflows",
-
+        "Developed business-focused web applications, including CRM systems, recruitment platforms, and e-commerce solutions.",
+      impact:
+        "Supported business operations, sales tracking, and recruitment workflows",
       highlights: [
-        "Built multi-panel CRM system with role-based access (Admin, Supervisor, Closers, Inventory)",
-        "Developed online quiz and hiring platform for recruitment automation",
-        "Worked on SwiftlyMeds e-commerce platform for online pharmacy",
-        "Designed scalable backend APIs and optimized system performance"
+        "Built a multi-panel CRM with role-based access for different users",
+        "Developed online quiz and recruitment platform features",
+        "Worked on the SwiftlyMeds e-commerce platform",
+        "Integrated REST APIs and developed responsive user interfaces",
       ],
-
       tech: [
         "React.js",
-        "Tailwind CSS"
-      ]
-    }
-
+        "JavaScript",
+        "Tailwind CSS",
+        "REST APIs",
+      ],
+    },
   ];
 
-
   return (
-    <section name="Experiance" className="hero-bg py-28 bg-[#0f172a] text-white">
-
-      <div className="max-w-[1100px] mx-auto px-6">
-
-        {/* TITLE */}
+    <section
+      name="Experiance"
+      className="hero-bg bg-[#0f172a] py-28 text-white"
+    >
+      <div className="mx-auto max-w-[1100px] px-6">
+        {/* SECTION TITLE */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="mb-20 text-center"
         >
           <h2 className="text-4xl font-semibold">
-            Professional <span className="text-cyan-400">Experience</span>
+            Professional{" "}
+            <span className="text-cyan-400">Experience</span>
           </h2>
 
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            2+ years of experience building production-level applications for real clients 
-            across healthcare, CRM, and e-commerce domains.
+          <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-gray-400">
+            Experience building web and mobile applications across
+            healthcare SaaS, CRM, employee management, and e-commerce.
           </p>
         </motion.div>
 
-
-        {/* TIMELINE */}
+        {/* EXPERIENCE TIMELINE */}
         <div className="relative border-l border-gray-700">
-
           {experiences.map((exp, index) => (
-
             <motion.div
-              key={index}
-              initial={{ opacity: 0, x: 80 }}
+              key={exp.company}
+              initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.2 }}
-              className="mb-14 ml-8"
+              viewport={{ once: true }}
+              transition={{
+                delay: index * 0.15,
+                duration: 0.5,
+              }}
+              className="relative mb-14 ml-5 sm:ml-8"
             >
+              {/* TIMELINE DOT */}
+              <span className="absolute -left-[30px] top-1 h-5 w-5 rounded-full border-4 border-[#0f172a] bg-cyan-400 sm:-left-[45px] sm:h-6 sm:w-6" />
 
-              {/* DOT */}
-              <span className="absolute -left-3 w-6 h-6 bg-cyan-400 rounded-full border-4 border-[#0B132B]"></span>
-
-              {/* CARD */}
-              <div className="bg-[#111c3a] border border-gray-700 p-6 rounded-xl 
-              hover:border-cyan-400 
-              hover:shadow-[0_0_25px_rgba(0,255,255,0.2)] 
-              hover:scale-[1.02] 
-              transition duration-300">
-
+              {/* EXPERIENCE CARD */}
+              <div className="rounded-xl border border-gray-700 bg-[#111c3a] p-5 transition duration-300 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(0,255,255,0.15)] sm:p-6">
                 {/* ROLE */}
                 <h3 className="text-xl font-semibold text-white">
                   {exp.role}
                 </h3>
 
-                {/* COMPANY */}
-                <p className="text-cyan-400 text-sm mb-2">
-                  {exp.company} • {exp.duration}
+                {/* COMPANY AND DURATION */}
+                <p className="mb-4 mt-2 text-sm leading-relaxed text-cyan-400">
+                  {exp.company}
+                  <span className="mx-2 text-gray-500">•</span>
+                  {exp.duration}
                 </p>
 
                 {/* DESCRIPTION */}
-                <p className="text-gray-300 mb-3">
+                <p className="mb-4 leading-relaxed text-gray-300">
                   {exp.description}
                 </p>
 
                 {/* IMPACT */}
-                <p className="text-sm text-cyan-400 mb-4">
-                  ✔ {exp.impact}
+                <p className="mb-4 text-sm leading-relaxed text-cyan-400">
+                  <span className="mr-2">✓</span>
+                  {exp.impact}
                 </p>
 
-                {/* HIGHLIGHTS */}
-                <ul className="text-gray-400 text-sm space-y-1 mb-4">
-                  {exp.highlights.slice(0, 4).map((item, i) => (
-                    <li key={i}>• {item}</li>
+                {/* RESPONSIBILITIES AND ACHIEVEMENTS */}
+                <ul className="mb-5 space-y-2 text-sm leading-relaxed text-gray-400">
+                  {exp.highlights.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-0.5 text-cyan-400">•</span>
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
 
-                {/* TECH */}
+                {/* TECHNOLOGIES */}
                 <div className="flex flex-wrap gap-2">
-                  {exp.tech.map((tech, i) => (
+                  {exp.tech.map((tech) => (
                     <span
-                      key={i}
-                      className="text-xs px-3 py-1 bg-cyan-500/10 border border-cyan-400 rounded-full text-cyan-400"
+                      key={tech}
+                      className="rounded-full border border-cyan-400/40 bg-cyan-500/10 px-3 py-1 text-xs text-cyan-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-
               </div>
-
             </motion.div>
-
           ))}
-
         </div>
-
       </div>
-
     </section>
   );
 }

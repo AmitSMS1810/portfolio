@@ -43,7 +43,7 @@ export default function Contact() {
 
 
   return (
-    <section name="ContactUs" className="hero-bg py-28 bg-[#0f172a] text-white">
+    <section id="ContactUs" name="ContactUs" className="hero-bg py-28 bg-[#0f172a] text-white">
 
       <div className="max-w-[1100px] mx-auto px-6">
 
